@@ -27,6 +27,7 @@ define('DB_USER', 'root');
 
 /** Пароль к базе данных MySQL */
 define('DB_PASSWORD', 'root');
+
 //Classico_adm
 //СдфыышсщЕру№ИуыеЛщыьуешсф№У?
 
