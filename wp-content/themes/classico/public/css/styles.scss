@@ -1,0 +1,593 @@
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+
+/* НАЧАЛО подключаем шрифт 'PhillippScript': */
+@font-face {
+  font-family: 'PhillippScript';
+  src: url('../fonts/PhillippScript/PhillippScript.ttf') format('truetype');
+  font-weight: normal;
+}
+/* КОНЕЦ подключаем шрифт 'PhillippScript' */
+
+//НАЧАЛО объявляем переменные SASS
+$decor-font: PhillippScript, Arial, serif;
+$color-dark: #9b4b58;
+$color-light: #c6a298;
+$color-neutral: #ede1e1;
+//КОНЕЦ объявляем переменные SASS
+
+/* НАЧАЛО общие стили */
+body {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-family: $decor-font;
+}
+
+h2 {
+  margin-top: 15px;
+  font-size: 32px;
+  @media (min-width: 768px) {
+    font-size: 38px;
+  }
+}
+h3 {
+  font-size: 24px;
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.heading {
+  background: $color-dark;
+  padding-bottom: 10px;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+  h2 {
+    display: inline-block;
+    padding-top: 10px;
+    @media screen and (min-width: 768px) {
+      margin-right: 20px;
+    }
+  }
+  a {
+    display: inline-block;
+    color: white;
+    background: $color-light;
+    border-radius: 3px;
+    padding: 5px 15px;
+    &:hover {
+      background: white;
+      color: $color-dark;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active {
+    color: lighten($color-light, 15);
+    text-decoration: none;
+  }
+}
+
+.uk-close-alt,
+.uk-close-alt:hover,
+.uk-modal-close {
+  color: black;
+}
+
+.uk-modal-dialog-lightbox .uk-modal-close.uk-close {
+  //top: -20px;
+  //right: -20px;
+  z-index: 1000;
+  background: white;
+  border-radius: 50%;
+  &:hover {
+    color: black;
+  }
+}
+
+//НАЧАЛО Стилизуем плейсхолдеры форм
+::-webkit-input-placeholder {
+  color: $color-dark;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $color-dark;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $color-dark;
+}
+:-ms-input-placeholder {
+  color: $color-dark;
+}
+//КОНЕЦ Стилизуем плейсхолдеры форм
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.social-icons {
+  float: none;
+  font-size: 20px;
+  @media screen and (min-width: 1220px) {
+    float: right;
+    font-size: 28px;
+  }
+
+  [class*=uk-icon] {
+    border: 2px white solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    transition-duration: .5s;
+    @media screen and (min-width: 1220px) {
+      border: 4px white solid;
+      line-height: 38px;
+      width: 38px;
+      height: 38px;
+    }
+    &:hover {
+      background: white;
+      color: $color-dark;
+      transition-duration: .5s;
+    }
+  }
+}
+/* КОНЕЦ общие стили */
+
+/* НАЧАЛО header */
+header {
+  background: $color-dark;
+  color: white;
+  font-size: 20px;
+  padding: 5px 0;
+  text-align: center;
+  @media screen and (min-width: 1220px) {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .uk-container {
+    margin-bottom: 0;
+  }
+
+  .contacts {
+    a {
+      line-height: 1.6;
+      display: block;
+      @media screen and (min-width: 960px) {
+        display: inline-block;
+      }
+    }
+  }
+
+  a + a[href*=tel]::before,
+  a + a[href*=mailto]::before {
+    @media screen and (min-width: 960px) {
+      content: "| ";
+      color: white;
+    }
+  }
+
+
+}
+/* КОНЕЦ header */
+
+/* НАЧАЛО footer */
+footer {
+  background: $color-dark;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    text-align: left;
+  }
+  .contacts-col {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    h3 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .social-icons {
+      float: none;
+    }
+  }
+}
+/* КОНЕЦ footer */
+
+/* НАЧАЛО nav-and-logo */
+.nav-and-logo {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  position: relative;
+  z-index: 10;
+  .logo {
+    max-width: 120px;
+    margin: 0 auto;
+    display: inline-block;
+    @media screen and (min-width: 1220px) {
+      max-width: none;
+    }
+  }
+  nav {
+    float: right;
+    background: transparent;
+    margin-top: 10px;
+    .uk-navbar-nav {
+      z-index: 100;
+      float: right;
+      &>li {
+        float: none;
+        display: inline-block;
+        &>a {
+          font-size: 16px;
+          font-weight: normal;
+          text-transform: uppercase;
+          padding: 0 10px;
+          @media screen and (min-width: 1220px) {
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+      }
+      &>li:hover {
+        & > a {
+          background: transparent;
+          color: lighten($color-dark, 15);
+        }
+      }
+      &>li.uk-active {
+        &>a {
+          background: transparent;
+          border-bottom: 4px $color-dark solid;
+        }
+      }
+      &>li + li::before {
+        content: "|";
+        display: inline-block;
+        float: left;
+        line-height: 40px;
+      }
+    }
+  }
+  nav.uk-active {
+    float: none;
+    background: rgba(255, 255, 255, .9);
+    margin-top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    .uk-navbar-nav {
+      float: none;
+    }
+  }
+}
+/* КОНЕЦ nav-and-logo */
+
+/* -----------------------
+--НАЧАЛО стр. index.html--
+-------------------------*/
+
+/* НАЧАЛО main-section */
+.main-section {
+  background: 50% 0/cover url("../img/main-background.jpg") padding-box;
+  box-sizing: border-box;
+  color: white;
+  text-align: right;
+  font-size: 24px;
+  font-family: $decor-font;
+  line-height: 1.2;
+  padding-bottom: 25px;
+  @media screen and (min-width: 1220px) {
+    background: 50% 0/cover url("../img/main-background.jpg") content-box;
+    min-height: 100vh;
+    padding-top: 56px;
+    margin-top: -147px;
+    font-size: 44px;
+    line-height: 1.4;
+    padding-bottom: 0;
+  }
+  p {
+    &:first-child {
+      padding-top: 15px;
+      @media screen and (min-width: 1220px) {
+        margin-top: 110px;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    span {
+      display: inline-block;
+      padding: 10px;
+      @media screen and (min-width: 1220px) {
+        padding: 5px 100px 0 30px;
+      }
+    }
+    &:nth-of-type(odd) span {
+      background: $color-light;
+    }
+    &:nth-of-type(even) span {
+      background: $color-dark;
+    }
+  }
+
+
+}
+/* КОНЕЦ main-section */
+
+/* НАЧАЛО services */
+.services {
+  background: url("../img/background-flowers.jpg");
+  padding: 35px 0;
+  li {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 35px;
+    .img {
+      height: 150px;
+      background: 50% 50%/cover;
+    }
+    .text-section {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      background: $color-neutral;
+      padding: 15px;
+      text-align: center;
+      h3 {
+        color: $color-dark;
+        margin-bottom: 0;
+      }
+      a {
+        margin-top: auto;
+        display: inline-block;
+        color: white;
+        background: $color-dark;
+        border-radius: 3px;
+        padding: 5px 15px;
+        &:hover {
+          background: white;
+          color: $color-dark;
+        }
+      }
+    }
+  }
+}
+/* КОНЕЦ services */
+
+/* НАЧАЛО about */
+.about {
+  padding: 35px 0;
+  text-align: justify;
+  .embed-container {
+    margin-bottom: 25px;
+    @media screen and (min-width: 768px){
+      margin-bottom: 0;
+    }
+  }
+}
+/* КОНЕЦ about */
+
+/* НАЧАЛО partners */
+.partners {
+  padding: 35px 0;
+  background: 100% 100%/cover url("../img/partners-background.jpg");
+  text-align: center;
+  .uk-grid {
+    li {
+      &>a {
+        background: $color-neutral;
+        display: block;
+        &:hover {
+          color: inherit;
+        }
+        &>div.img {
+          height: 300px;
+          background: 50% 50%/cover;
+        }
+        .partner-name {
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          height: 50px;
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .uk-slidenav {
+    display: block;
+    margin-top: -44px;
+    height: 90px;
+    width: 40px;
+    top: 45%;
+    &::before {
+      display: none;
+    }
+    &.uk-slidenav-previous {
+      left: -15px;
+      transition-duration: .2s;
+      &:hover {
+        left: -18px;
+      }
+      @media screen and (min-width: 1220px) {
+        left: -27px;
+        &:hover {
+          left: -30px;
+        }
+      }
+    }
+    &.uk-slidenav-next {
+      right: -15px;
+      transition-duration: .2s;
+      &:hover {
+        right: -18px;
+      }
+      @media screen and (min-width: 1220px) {
+        right: -27px;
+        &:hover {
+          right: -30px;
+        }
+      }
+    }
+  }
+}
+/* КОНЕЦ partners */
+
+/* НАЧАЛО trainings */
+.trainings {
+  padding: 35px 0;
+  text-align: justify;
+  img {
+    margin-bottom: 25px !important;
+    display: block;
+    @media screen and (min-width: 768px){
+      margin-bottom: 0;
+    }
+  }
+}
+/* КОНЕЦ trainings */
+
+/* НАЧАЛО feedback */
+.feedback {
+  background: url("../img/background-flowers.jpg");
+
+  .form-col {
+    padding-top: 35px;
+    padding-bottom: 10px;
+    form {
+      input,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        background: $color-neutral;
+        border: none;
+        padding: 12px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+
+      textarea {
+        resize: none;
+        min-height: 200px;
+      }
+
+      input[type=submit] {
+        cursor: pointer;
+        background: $color-dark;
+        color: white;
+        padding: 10px 50px;
+        font-size: 16px;
+        width: auto;
+        float: right;
+        &:hover {
+          background: white;
+          color: $color-dark;
+        }
+      }
+    }
+  }
+
+  .text-col {
+    background: rgba(155, 75, 88, .5);
+    background-clip: content-box;
+    color: white;
+    text-align: center;
+
+    .heading {
+      h2 {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .text {
+      font-size: 22px;
+      margin-top: 15px;
+      @media screen and (min-width: 768px) {
+        margin-top: 15%;
+      }
+    }
+  }
+}
+/* КОНЕЦ feedback */
+
+/*------------------------
+--КОНЕЦ стр. index.html--
+-------------------------*/
+/* --------------------------------
+--НАЧАЛО стр. single-service.html--
+----------------------------------*/
+.single-service {
+  background: url("../img/background-flowers.jpg");
+  text-align: justify;
+  .uk-container {
+    background: $color-neutral content-box;
+    h1, h2, h3, h4, h5, h6 {
+      color: $color-dark;
+      text-align: center;
+    }
+    .content {
+      padding: 15px 25px;
+      p {
+        margin-top: 0;
+        text-indent: 20px;
+      }
+      img {
+        border: 3px solid $color-dark;
+        margin-bottom: 5px;
+        width: 100%;
+        @media (min-width: 767px) {
+          width: auto;
+          max-width: 400px;
+        }
+      }
+      img.float-right-img {
+        float: right;
+        margin-left: 15px;
+      }
+      img.float-left-img {
+        float: left;
+        margin-right: 15px;
+      }
+      .video-container {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+/* --------------------------------
+--КОНЕЦ стр. single-service.html--
+----------------------------------*/
+
+
