@@ -1,0 +1,462 @@
+@charset "UTF-8";
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+/* НАЧАЛО подключаем шрифт 'PhillippScript': */
+@font-face {
+  font-family: 'PhillippScript';
+  src: url("../fonts/PhillippScript/PhillippScript.ttf") format("truetype");
+  font-weight: normal; }
+/* КОНЕЦ подключаем шрифт 'PhillippScript' */
+/* НАЧАЛО общие стили */
+body {
+  font-size: 16px;
+  line-height: 1.2; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-family: PhillippScript, Arial, serif; }
+
+h2 {
+  margin-top: 15px;
+  font-size: 32px; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 38px; } }
+
+h3 {
+  font-size: 24px; }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 28px; } }
+
+.heading {
+  background: #9b4b58;
+  padding-bottom: 10px;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .heading {
+      text-align: left; } }
+  .heading h2 {
+    display: inline-block;
+    padding-top: 10px; }
+    @media screen and (min-width: 768px) {
+      .heading h2 {
+        margin-right: 20px; } }
+  .heading a {
+    display: inline-block;
+    color: white;
+    background: #c6a298;
+    border-radius: 3px;
+    padding: 5px 15px; }
+    .heading a:hover {
+      background: white;
+      color: #9b4b58; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+  a:hover, a:focus, a:active {
+    color: #e1cec9;
+    text-decoration: none; }
+
+.uk-close-alt,
+.uk-close-alt:hover,
+.uk-modal-close {
+  color: black; }
+
+.uk-modal-dialog-lightbox .uk-modal-close.uk-close {
+  z-index: 1000;
+  background: white;
+  border-radius: 50%; }
+  .uk-modal-dialog-lightbox .uk-modal-close.uk-close:hover {
+    color: black; }
+
+::-webkit-input-placeholder {
+  color: #9b4b58; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #9b4b58; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #9b4b58; }
+
+:-ms-input-placeholder {
+  color: #9b4b58; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.social-icons {
+  float: none;
+  font-size: 20px; }
+  @media screen and (min-width: 1220px) {
+    .social-icons {
+      float: right;
+      font-size: 28px; } }
+  .social-icons [class*=uk-icon] {
+    border: 2px white solid;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    transition-duration: .5s; }
+    @media screen and (min-width: 1220px) {
+      .social-icons [class*=uk-icon] {
+        border: 4px white solid;
+        line-height: 38px;
+        width: 38px;
+        height: 38px; } }
+    .social-icons [class*=uk-icon]:hover {
+      background: white;
+      color: #9b4b58;
+      transition-duration: .5s; }
+
+/* КОНЕЦ общие стили */
+/* НАЧАЛО header */
+header {
+  background: #9b4b58;
+  color: white;
+  font-size: 20px;
+  padding: 5px 0;
+  text-align: center; }
+  @media screen and (min-width: 1220px) {
+    header {
+      font-size: 28px;
+      text-align: left; } }
+  header .uk-container {
+    margin-bottom: 0; }
+  header .contacts a {
+    line-height: 1.6;
+    display: block; }
+    @media screen and (min-width: 960px) {
+      header .contacts a {
+        display: inline-block; } }
+  @media screen and (min-width: 960px) {
+    header a + a[href*=tel]::before,
+    header a + a[href*=mailto]::before {
+      content: "| ";
+      color: white; } }
+
+/* КОНЕЦ header */
+/* НАЧАЛО footer */
+footer {
+  background: #9b4b58;
+  color: white;
+  font-size: 16px;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    footer {
+      font-size: 22px;
+      text-align: left; } }
+  footer .contacts-col {
+    padding-top: 25px;
+    padding-bottom: 25px; }
+    footer .contacts-col h3 {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    footer .contacts-col .social-icons {
+      float: none; }
+
+/* КОНЕЦ footer */
+/* НАЧАЛО nav-and-logo */
+.nav-and-logo {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  position: relative;
+  z-index: 10; }
+  .nav-and-logo .logo {
+    max-width: 120px;
+    margin: 0 auto;
+    display: inline-block; }
+    @media screen and (min-width: 1220px) {
+      .nav-and-logo .logo {
+        max-width: none; } }
+  .nav-and-logo nav {
+    float: right;
+    background: transparent;
+    margin-top: 10px; }
+    .nav-and-logo nav .uk-navbar-nav {
+      z-index: 100;
+      float: right; }
+      .nav-and-logo nav .uk-navbar-nav > li {
+        float: none;
+        display: inline-block; }
+        .nav-and-logo nav .uk-navbar-nav > li > a {
+          font-size: 16px;
+          font-weight: normal;
+          text-transform: uppercase;
+          padding: 0 10px; }
+          @media screen and (min-width: 1220px) {
+            .nav-and-logo nav .uk-navbar-nav > li > a {
+              font-weight: bold;
+              font-size: 18px; } }
+      .nav-and-logo nav .uk-navbar-nav > li:hover > a {
+        background: transparent;
+        color: #bd7681; }
+      .nav-and-logo nav .uk-navbar-nav > li.uk-active > a {
+        background: transparent;
+        border-bottom: 4px #9b4b58 solid; }
+      .nav-and-logo nav .uk-navbar-nav > li + li::before {
+        content: "|";
+        display: inline-block;
+        float: left;
+        line-height: 40px; }
+  .nav-and-logo nav.uk-active {
+    float: none;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: 0;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    .nav-and-logo nav.uk-active .uk-navbar-nav {
+      float: none; }
+
+/* КОНЕЦ nav-and-logo */
+/* -----------------------
+--НАЧАЛО стр. index.html--
+-------------------------*/
+/* НАЧАЛО main-section */
+.main-section {
+  background: 50% 0/cover url("../img/main-background.jpg") padding-box;
+  box-sizing: border-box;
+  color: white;
+  text-align: right;
+  font-size: 24px;
+  font-family: PhillippScript, Arial, serif;
+  line-height: 1.2;
+  padding-bottom: 25px; }
+  @media screen and (min-width: 1220px) {
+    .main-section {
+      background: 50% 0/cover url("../img/main-background.jpg") content-box;
+      min-height: 100vh;
+      padding-top: 56px;
+      margin-top: -147px;
+      font-size: 44px;
+      line-height: 1.4;
+      padding-bottom: 0; } }
+  .main-section p:first-child {
+    padding-top: 15px; }
+    @media screen and (min-width: 1220px) {
+      .main-section p:first-child {
+        margin-top: 110px; } }
+  .main-section p:last-child {
+    margin-bottom: 0; }
+  .main-section p span {
+    display: inline-block;
+    padding: 10px; }
+    @media screen and (min-width: 1220px) {
+      .main-section p span {
+        padding: 5px 100px 0 30px; } }
+  .main-section p:nth-of-type(odd) span {
+    background: #c6a298; }
+  .main-section p:nth-of-type(even) span {
+    background: #9b4b58; }
+
+/* КОНЕЦ main-section */
+/* НАЧАЛО services */
+.services {
+  background: url("../img/background-flowers.jpg");
+  padding: 35px 0; }
+  .services li {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 35px; }
+    .services li .img {
+      height: 150px;
+      background: 50% 50%/cover; }
+    .services li .text-section {
+      flex: 1;
+      display: flex;
+      flex-flow: column;
+      background: #ede1e1;
+      padding: 15px;
+      text-align: center; }
+      .services li .text-section h3 {
+        color: #9b4b58;
+        margin-bottom: 0; }
+      .services li .text-section a {
+        margin-top: auto;
+        display: inline-block;
+        color: white;
+        background: #9b4b58;
+        border-radius: 3px;
+        padding: 5px 15px; }
+        .services li .text-section a:hover {
+          background: white;
+          color: #9b4b58; }
+
+/* КОНЕЦ services */
+/* НАЧАЛО about */
+.about {
+  padding: 35px 0;
+  text-align: justify; }
+  .about .embed-container {
+    margin-bottom: 25px; }
+    @media screen and (min-width: 768px) {
+      .about .embed-container {
+        margin-bottom: 0; } }
+
+/* КОНЕЦ about */
+/* НАЧАЛО partners */
+.partners {
+  padding: 35px 0;
+  background: 100% 100%/cover url("../img/partners-background.jpg");
+  text-align: center; }
+  .partners .uk-grid li > a {
+    background: #ede1e1;
+    display: block; }
+    .partners .uk-grid li > a:hover {
+      color: inherit; }
+    .partners .uk-grid li > a > div.img {
+      height: 300px;
+      background: 50% 50%/cover; }
+    .partners .uk-grid li > a .partner-name {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      height: 50px; }
+      .partners .uk-grid li > a .partner-name p {
+        margin: 0; }
+  .partners .uk-slidenav {
+    display: block;
+    margin-top: -44px;
+    height: 90px;
+    width: 40px;
+    top: 45%; }
+    .partners .uk-slidenav::before {
+      display: none; }
+    .partners .uk-slidenav.uk-slidenav-previous {
+      left: -15px;
+      transition-duration: .2s; }
+      .partners .uk-slidenav.uk-slidenav-previous:hover {
+        left: -18px; }
+      @media screen and (min-width: 1220px) {
+        .partners .uk-slidenav.uk-slidenav-previous {
+          left: -27px; }
+          .partners .uk-slidenav.uk-slidenav-previous:hover {
+            left: -30px; } }
+    .partners .uk-slidenav.uk-slidenav-next {
+      right: -15px;
+      transition-duration: .2s; }
+      .partners .uk-slidenav.uk-slidenav-next:hover {
+        right: -18px; }
+      @media screen and (min-width: 1220px) {
+        .partners .uk-slidenav.uk-slidenav-next {
+          right: -27px; }
+          .partners .uk-slidenav.uk-slidenav-next:hover {
+            right: -30px; } }
+
+/* КОНЕЦ partners */
+/* НАЧАЛО trainings */
+.trainings {
+  padding: 35px 0;
+  text-align: justify; }
+  .trainings img {
+    margin-bottom: 25px !important;
+    display: block; }
+    @media screen and (min-width: 768px) {
+      .trainings img {
+        margin-bottom: 0; } }
+
+/* КОНЕЦ trainings */
+/* НАЧАЛО feedback */
+.feedback {
+  background: url("../img/background-flowers.jpg"); }
+  .feedback .form-col {
+    padding-top: 35px;
+    padding-bottom: 10px; }
+    .feedback .form-col form input,
+    .feedback .form-col form textarea {
+      width: 100%;
+      box-sizing: border-box;
+      background: #ede1e1;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 15px; }
+    .feedback .form-col form textarea {
+      resize: none;
+      min-height: 200px; }
+    .feedback .form-col form input[type=submit] {
+      cursor: pointer;
+      background: #9b4b58;
+      color: white;
+      padding: 10px 50px;
+      font-size: 16px;
+      width: auto;
+      float: right; }
+      .feedback .form-col form input[type=submit]:hover {
+        background: white;
+        color: #9b4b58; }
+  .feedback .text-col {
+    background: rgba(155, 75, 88, 0.5);
+    background-clip: content-box;
+    color: white;
+    text-align: center; }
+    .feedback .text-col .heading h2 {
+      display: block;
+      text-align: center; }
+    .feedback .text-col .text {
+      font-size: 22px;
+      margin-top: 15px; }
+      @media screen and (min-width: 768px) {
+        .feedback .text-col .text {
+          margin-top: 15%; } }
+
+/* КОНЕЦ feedback */
+/*------------------------
+--КОНЕЦ стр. index.html--
+-------------------------*/
+/* --------------------------------
+--НАЧАЛО стр. single-service.html--
+----------------------------------*/
+.single-service {
+  background: url("../img/background-flowers.jpg");
+  text-align: justify; }
+  .single-service .uk-container {
+    background: #ede1e1 content-box; }
+    .single-service .uk-container h1, .single-service .uk-container h2, .single-service .uk-container h3, .single-service .uk-container h4, .single-service .uk-container h5, .single-service .uk-container h6 {
+      color: #9b4b58;
+      text-align: center; }
+    .single-service .uk-container .content {
+      padding: 15px 25px; }
+      .single-service .uk-container .content p {
+        margin-top: 0;
+        text-indent: 20px; }
+      .single-service .uk-container .content img {
+        border: 3px solid #9b4b58;
+        margin-bottom: 5px;
+        width: 100%; }
+        @media (min-width: 767px) {
+          .single-service .uk-container .content img {
+            width: auto;
+            max-width: 400px; } }
+      .single-service .uk-container .content img.float-right-img {
+        float: right;
+        margin-left: 15px; }
+      .single-service .uk-container .content img.float-left-img {
+        float: left;
+        margin-right: 15px; }
+      .single-service .uk-container .content .video-container {
+        max-width: 500px;
+        margin: 0 auto; }
+
+/* --------------------------------
+--КОНЕЦ стр. single-service.html--
+----------------------------------*/
+
+/*# sourceMappingURL=styles.css.map */
