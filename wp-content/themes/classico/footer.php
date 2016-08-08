@@ -48,6 +48,6 @@
 	console.log();
 	VMasker(el).maskPattern("+9(999) 999-99-99"); // masking the input
 </script>
-<?php //wp_footer() ?>
+<?php wp_footer() ?>
 </body>
 </html>
