@@ -38,5 +38,16 @@
 <script>
 	$("table").addClass('uk-table uk-table-striped uk-table-hover');
 </script>
+<script src="https://bsh.su/client/script/GET/"></script>
+<script>
+	var submitSMG = new BMModule();
+	submitSMG.submitForm(function(success) { $('.blink-mailer input[type=submit]').val('Отправить'); $('.blink-mailer input,.blink-mailer textarea').prop('disabled', true); $('.success-mail-text').html(success); $('.success-mail-text').show(500);  }, function(error) {});
+</script>
+<script>
+	var el = document.querySelector('input[type="tel"]');
+	console.log();
+	VMasker(el).maskPattern("+9(999) 999-99-99"); // masking the input
+</script>
+<?php //wp_footer() ?>
 </body>
 </html>

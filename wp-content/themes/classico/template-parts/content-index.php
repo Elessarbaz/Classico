@@ -27,7 +27,7 @@
 					<div class="text-section">
 						<h3><?=get_the_title()?></h3>
 						<p>
-							<?php the_content() ?>
+							<?php the_content('') ?>
 						</p>
 						<a href="<?=get_permalink()?>">Подробнее</a>
 					</div>
@@ -41,9 +41,10 @@
 	<!--НАЧАЛО О нас-->
 	<!--НАЧАЛО типовой заголовок-->
 	<div class="heading" id="about">
+		<?php $post=get_post(37); setup_postdata($post); ?>
 		<div class="uk-container uk-container-center">
 			<h2>О центре косметологии Сlassico</h2>
-			<a href="single-article.html">Подробнее</a>
+			<a href="<?=get_permalink(37)?>">Подробнее</a>
 		</div>
 	</div>
 	<!--КОНЕЦ типовой заголовок-->
@@ -51,15 +52,17 @@
 		<div class="uk-container uk-container-center">
 			<div class="uk-grid">
 				<div class="uk-width-medium-1-2">
-					<div class='embed-container'><iframe src='https://www.youtube.com/embed/B0j4qH7AHTY' frameborder='0' allowfullscreen></iframe></div>
+					<div class='embed-container'><img src="<?=get_the_post_thumbnail_url()?>" ></div>
 				</div>
 				<div class="uk-width-medium-1-2">
-					<p>Suspendisse condimentum, sem at maximus lacinia, orci justo aliquet justo, molestie fringilla sem enim ac magna. Nulla euismod nunc ac fermentum varius. Phasellus imperdiet ex sed elit scelerisque, facilisis mattis purus aliquam. Aliquam id sapien vel orci dapibus feugiat. Suspendisse sit amet purus lacinia, accumsan eros at, aliquam sem. Mauris sit amet posuere libero, in tincidunt magna. Mauris consequat nisi vel iaculis venenatis.<br><br>
-						Nunc sit amet magna leo. Nullam ornare augue in dui ornare gravida. Nam dignissim pellentesque sollicitudin. Nunc vehicula molestie libero, in fermentum erat aliquet quis. Sed leo urna, aliquam sed tempus at, tempor a est. In hac habitasse platea dictumst. Ut in purus faucibus, tincidunt nunc sed, ultrices orci. Fusce sed lorem ac arcu feugiat posuere sed in sem. Integer quis ante cursus sapien lacinia rutrum vitae nec augue. Mauris quis ultricies mauris. Aliquam id sapien vel orci dapibus feugiat. Suspendisse sit amet purus lacinia, accumsan eros at, aliquam sem. Mauris sit amet posuere libero, in tincidunt magna.</p>
+					<article>
+					<?php the_content('') ?>
+					</article>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php wp_reset_query(); ?>
 	<!--КОНЕЦ О нас-->
 
 	<!--НАЧАЛО партнёры-->
@@ -75,39 +78,25 @@
 			<div class="data-uk-slider uk-slidenav-position" data-uk-slider>
 				<div class="uk-slider-container">
 					<ul class="uk-slider uk-grid uk-grid-large uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+						<?php $gallery=pp_gallery_get();
+						foreach ($gallery as $image):
+						?>
 						<li>
-							<a href="single-article.html">
-								<div class="img" style="background-image: url('img/partners-example-1.jpg');"></div>
+							<a href="<?=$image->description?>">
+								<div class="img" style="background-image: url('<?=$image->url?>');"></div>
 								<div class="partner-name">
-									<p>Имя партнёра</p>
+									<p><?=$image->alt?></p>
 								</div>
 							</a>
 						</li>
-						<li>
-							<a href="single-article.html">
-								<div class="img" style="background-image: url('img/partners-example-2.jpg');"></div>
-								<div class="partner-name">
-									<p>Очень-очень-очень
-										длинное длинное длинное
-										имя партнера дочень длинное</p>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a href="single-article.html">
-								<div class="img" style="background-image: url('img/partners-example-3.jpg');"></div>
-								<div class="partner-name">
-									<p>Длинное Имя партнера</p>
-								</div>
-							</a>
-						</li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
 				<a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous">
-					<img src="img/arrow-left.png" alt="Предыдущее фото">
+					<img src="<?php bloginfo('template_directory') ?>/public/img/arrow-left.png" alt="Предыдущее фото">
 				</a>
 				<a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next">
-					<img src="img/arrow-right.png" alt="Следущее фото">
+					<img src="<?php bloginfo('template_directory') ?>/public/img/arrow-right.png" alt="Следущее фото">
 				</a>
 			</div>
 		</div>
@@ -117,10 +106,11 @@
 
 	<!--НАЧАЛО Обучение-->
 	<!--НАЧАЛО типовой заголовок-->
+	<?php $post=get_post(46); setup_postdata($post); ?>
 	<div class="heading" id="trainings">
 		<div class="uk-container uk-container-center">
 			<h2>Обучение косметологии</h2>
-			<a href="single-article.html">Подробнее</a>
+			<a href="<?=get_permalink()?>">Подробнее</a>
 		</div>
 	</div>
 	<!--КОНЕЦ типовой заголовок-->
@@ -128,22 +118,12 @@
 		<div class="uk-container uk-container-center">
 			<div class="uk-grid">
 				<div class="uk-width-medium-1-2">
-					<img src="img/training-example.jpg">
+					<img src="<?=get_the_post_thumbnail_url()?>">
 				</div>
 				<div class="uk-width-medium-1-2">
-					<p>Suspendisse condimentum, sem at maximus lacinia, orci justo aliquet justo, molestie fringilla sem enim ac magna. Nulla euismod nunc ac fermentum varius. Phasellus imperdiet ex sed elit scelerisque, facilisis mattis purus aliquam. Aliquam id sapien vel orci dapibus feugiat. Suspendisse sit amet purus lacinia, accumsan eros at, aliquam sem. Mauris sit amet posuere libero, in tincidunt magna. Mauris consequat nisi vel iaculis venenatis.</p>
-
-					<p>Обучение проводится по следующим специальностям:</p>
-					<ul>
-						<li>Cпециальность 1</li>
-						<li>Cпециальность 2</li>
-						<li>Cпециальность 3</li>
-						<li>Cпециальность 4</li>
-						<li>Cпециальность 5</li>
-						<li>Cпециальность 6</li>
-					</ul>
-
-					<p>Suspendisse condimentum, sem at maximus lacinia, orci justo aliquet justo, molestie fringilla sem enim ac magna. Nulla euismod nunc ac mentum varius. Phasellus imperdiet ex sed elit scelerisque, facilisis </p>
+					<article>
+					<?php the_content(''); ?>
+					</article>
 				</div>
 			</div>
 		</div>
@@ -164,15 +144,16 @@
 					</div>
 					<!--КОНЕЦ типовой заголовок-->
 					<div class="text">
-						<p>Если у Вас возникли вопросы, <br>мы всегда рады на них ответить.</p>
+						<p class="success-mail-text" >Если у Вас возникли вопросы, <br>мы всегда рады на них ответить.</p>
 					</div>
 
 				</div>
 				<div class="uk-width-medium-1-3 uk-pull-2-3 form-col">
-					<form action="">
-						<input type="text" id="name" placeholder="Ваше имя">
-						<input type="tel" id="phoneNumber" placeholder="Номер телефона">
-						<textarea name="msg" id="msg" placeholder="Опишите, что Вас интересует"></textarea>
+					<form class="blink-mailer">
+						<input type="hidden" name="title" value="Обратная связь">
+						<input type="text" id="name" name="Имя" placeholder="Ваше имя">
+						<input type="tel" id="phoneNumber" placeholder="Номер телефона" name="Номер телефона">
+						<textarea name="Сообщение" id="msg" placeholder="Опишите, что Вас интересует"></textarea>
 						<input type="submit" value="Отправить">
 					</form>
 				</div>
