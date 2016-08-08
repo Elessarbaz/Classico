@@ -1,28 +1,39 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Classico
- */
+<!--НАЧАЛО оставить заявку-->
+<footer id="footer">
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid">
+			<div class="uk-width-medium-1-3 contacts-col">
+				<img src="<?=get_field('logo-f',4)?>" alt="Лого" class="logo">
+				<h3>Наши контакты</h3>
+				<div class="address-container">
+					<p class="address"><?=get_field('address',4)?></p>
+				</div>
+				<div class="phone-and-email">
+					<p><a class="phone-number" href="tel:<?=get_field('phone-1',4)?>"><?=get_field('phone-1',4)?></a> <br>
+						<a class="phone-number" href="tel:<?=get_field('phone-2',4)?>"><?=get_field('phone-2',4)?></a> <br>
+						<a href="mailto:<?=get_field('email',4)?>"><?=get_field('email',4)?></a>
+					</p>
+				</div>
+				<span class="social-icons">
+                        <a target="_blank" href="<?=get_field('instagram')?>"><i class="uk-icon-instagram"></i></a>
+                        <a target="_blank" href="<?=get_field('facebook')?>"><i class="uk-icon-facebook"></i></a>
+                        <a target="_blank" href="<?=get_field('vk')?>"><i class="uk-icon-vk"></i></a>
+                        <a target="_blank" href="<?=get_field('twitter')?>"><i class="uk-icon-twitter"></i></a>
+                    </span>
+			</div>
+			<div class="uk-width-medium-2-3">
+				<?=get_field('map',4)?>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--КОНЕЦ оставить заявку-->
 
-?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'classico' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'classico' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'classico' ), 'classico', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
-
+<script src="<?php bloginfo('template_directory') ?>/public/js/jquery-2.2.3.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/uikit.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/sticky.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/slider.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.min.js"></script>
 </body>
 </html>
