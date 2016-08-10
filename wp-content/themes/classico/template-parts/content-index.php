@@ -18,7 +18,7 @@
 	<div class="services">
 		<div class="uk-container uk-container-center">
 			<ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-				<?php $posts=get_posts(array('category_name'=>'services','orderby'=>'ASC', 'numberposts'=>3));
+				<?php $posts=get_posts(array('category_name'=>'services','orderby'=>'ASC', 'numberposts'=>8));
 				foreach ($posts as $post): setup_postdata($post);
 				?>
 				<li>
@@ -41,10 +41,10 @@
 	<!--НАЧАЛО О нас-->
 	<!--НАЧАЛО типовой заголовок-->
 	<div class="heading" id="about">
-		<?php $post=get_post(37); setup_postdata($post); ?>
+		<?php $post=get_post(26); setup_postdata($post); ?>
 		<div class="uk-container uk-container-center">
-			<h2>О центре косметологии Сlassico</h2>
-			<a href="<?=get_permalink(37)?>">Подробнее</a>
+			<h2><?=get_the_title()?></h2>
+			<a href="<?=get_permalink(26)?>">Подробнее</a>
 		</div>
 	</div>
 	<!--КОНЕЦ типовой заголовок-->
@@ -106,10 +106,10 @@
 
 	<!--НАЧАЛО Обучение-->
 	<!--НАЧАЛО типовой заголовок-->
-	<?php $post=get_post(46); setup_postdata($post); ?>
+	<?php $post=get_post(31); setup_postdata($post); ?>
 	<div class="heading" id="trainings">
 		<div class="uk-container uk-container-center">
-			<h2>Обучение косметологии</h2>
+			<h2><?=get_the_title()?></h2>
 			<a href="<?=get_permalink()?>">Подробнее</a>
 		</div>
 	</div>
