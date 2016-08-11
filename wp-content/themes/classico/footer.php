@@ -36,6 +36,7 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slider.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/components/parallax.min.js"></script>
 <script>
 	$("table").addClass('uk-table uk-table-striped uk-table-hover');
 </script>

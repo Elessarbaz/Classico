@@ -1,11 +1,11 @@
 	<!--НАЧАЛО main-section-->
-	<div class="uk-slidenav-position" data-uk-slideshow>
+	<div class="uk-slidenav-position" data-uk-slideshow="{kenburns:true, autoplay: true}">
 		<ul class="uk-slideshow">
 			<?php $gallery = pp_gallery_get();
 				foreach ($gallery as $image){
 			?>
 			<li>
-				<div class="main-section  uk-flex uk-flex-center uk-flex-column" style="background-image: url(<?php echo $image->url?>)">
+				<div class="main-section uk-flex uk-flex-center uk-flex-column" style="background-image: url(<?php echo $image->url?>)">
 					<?php echo $image->description?>
 				</div>
 			</li>
@@ -64,7 +64,9 @@
 		<div class="uk-container uk-container-center">
 			<div class="uk-grid">
 				<div class="uk-width-medium-1-2">
-					<div class='embed-container'><img src="<?=get_the_post_thumbnail_url()?>" ></div>
+					<div class='embed-container'>
+						<?=get_field('video',4)?>
+					</div>
 				</div>
 				<div class="uk-width-medium-1-2">
 					<article>
