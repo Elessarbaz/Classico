@@ -1,6 +1,18 @@
 	<!--НАЧАЛО main-section-->
-	<div class="main-section">
-		<?=get_field('main-text',4) ?>
+	<div class="uk-slidenav-position" data-uk-slideshow>
+		<ul class="uk-slideshow">
+			<?php $gallery = pp_gallery_get();
+				foreach ($gallery as $image){
+			?>
+			<li>
+				<div class="main-section  uk-flex uk-flex-center uk-flex-column" style="background-image: url(<?php echo $image->url?>)">
+					<?php echo $image->description?>
+				</div>
+			</li>
+			<?php }?>
+		</ul>
+		<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+		<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
 	</div>
 	<!--КОНЕЦ main-section-->
 

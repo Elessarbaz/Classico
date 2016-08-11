@@ -131,17 +131,17 @@ a {
 header {
   background: #9b4b58;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px 0;
   text-align: center; }
   @media screen and (min-width: 1220px) {
     header {
-      font-size: 28px;
+      font-size: 18px;
       text-align: left; } }
   header .uk-container {
     margin-bottom: 0; }
   header .contacts a {
-    line-height: 1.6;
+    line-height: 2.6;
     display: block; }
     @media screen and (min-width: 960px) {
       header .contacts a {
@@ -161,7 +161,7 @@ footer {
   text-align: center; }
   @media screen and (min-width: 768px) {
     footer {
-      font-size: 22px;
+      font-size: 18px;
       text-align: left; } }
   footer .contacts-col {
     padding-top: 25px;
@@ -196,14 +196,14 @@ footer {
         float: none;
         display: inline-block; }
         .nav-and-logo nav .uk-navbar-nav > li > a {
-          font-size: 16px;
+          font-size: 12px;
           font-weight: normal;
           text-transform: uppercase;
           padding: 0 10px; }
           @media screen and (min-width: 1220px) {
             .nav-and-logo nav .uk-navbar-nav > li > a {
               font-weight: bold;
-              font-size: 18px; } }
+              font-size: 12px; } }
       .nav-and-logo nav .uk-navbar-nav > li:hover > a {
         background: transparent;
         color: #bd7681; }
@@ -250,9 +250,9 @@ footer {
       padding-bottom: 0; } }
   .main-section p:first-child {
     padding-top: 15px; }
-    @media screen and (min-width: 1220px) {
+    @media screen and (max-width: 768px) {
       .main-section p:first-child {
-        margin-top: 110px; } }
+        white-space: nowrap; } }
   .main-section p:last-child {
     margin-bottom: 0; }
   .main-section p span {

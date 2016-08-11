@@ -39,7 +39,6 @@ h3 {
     font-size: 28px;
   }
 }
-
 .heading {
   background: $color-dark;
   padding-bottom: 10px;
@@ -162,11 +161,11 @@ a {
 header {
   background: $color-dark;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   padding: 5px 0;
   text-align: center;
   @media screen and (min-width: 1220px) {
-    font-size: 28px;
+    font-size: 18px;
     text-align: left;
   }
 
@@ -176,7 +175,7 @@ header {
 
   .contacts {
     a {
-      line-height: 1.6;
+      line-height: 2.6;
       display: block;
       @media screen and (min-width: 960px) {
         display: inline-block;
@@ -203,7 +202,7 @@ footer {
   font-size: 16px;
   text-align: center;
   @media screen and (min-width: 768px) {
-    font-size: 22px;
+    font-size: 18px;
     text-align: left;
   }
   .contacts-col {
@@ -244,13 +243,13 @@ footer {
         float: none;
         display: inline-block;
         &>a {
-          font-size: 16px;
+          font-size: 12px;
           font-weight: normal;
           text-transform: uppercase;
           padding: 0 10px;
           @media screen and (min-width: 1220px) {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 12px;
           }
         }
       }
@@ -315,7 +314,9 @@ footer {
     &:first-child {
       padding-top: 15px;
       @media screen and (min-width: 1220px) {
-        margin-top: 110px;
+      }
+      @media screen and (max-width: 768px) {
+        white-space: nowrap;
       }
     }
     &:last-child {

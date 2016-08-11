@@ -33,7 +33,7 @@
 
 <!--НАЧАЛО nav-and-logo-->
 <div class="nav-and-logo">
-	<div class="uk-container uk-container-center">
+	<div class="uk-container uk-container-center uk-flex uk-flex-bottom uk-flex-space-between">
 		<a href="/"><img src="<?=get_field('logo',4)?>" alt="Лого" class="logo"></a>
 		<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'body', top:-200, animation: 'uk-animation-slide-top'}">
 			<ul class="uk-navbar-nav uk-hidden-small" >
