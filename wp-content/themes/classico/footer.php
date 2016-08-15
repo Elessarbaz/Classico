@@ -27,6 +27,10 @@
 		</div>
 	</div>
 </footer>
+
+<div class="link-up">
+	<a href="#home"><i class="uk-icon uk-icon-chevron-up"></i></a>
+</div>
 <!--КОНЕЦ оставить заявку-->
 
 

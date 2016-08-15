@@ -593,6 +593,42 @@ footer {
   }
 }
 
+.image-gallery{
+  width: 100%;
+  padding-bottom: 70%;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center center;
+  border: 2px solid black;
+}
+
+.link-up{
+  position: fixed;
+  bottom: 104px;
+  right: 30px;
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid white;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  background: #9b4b58;
+  z-index: 99999999;
+  a{
+    font-size: 36px;
+    color: white;
+    margin-bottom: 3px;
+  }
+  &:hover{
+    background: white;
+    transition: all 400ms;
+    a{
+      color: #9b4b58;
+    }
+  }
+}
+
 /* --------------------------------
 --КОНЕЦ стр. single-service.html--
 ----------------------------------*/

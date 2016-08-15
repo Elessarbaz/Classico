@@ -143,6 +143,40 @@
 		</div>
 	</div>
 	<!--КОНЕЦ Обучение-->
+	<div class="heading" id="masters">
+		<div class="uk-container uk-container-center">
+			<h2>Мастера нашего центра</h2>
+		</div>
+	</div>
+	<!--КОНЕЦ типовой заголовок-->
+	<div class="partners">
+		<div class="uk-container uk-container-center">
+			<div class="data-uk-slider uk-slidenav-position" data-uk-slider>
+				<div class="uk-slider-container">
+					<ul class="uk-slider uk-grid uk-grid-large uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+						<?php $gallery=pp_gallery_get(50);
+						foreach ($gallery as $image):
+							?>
+							<li>
+								<a href="#">
+									<div class="img" style="background-image: url('<?=$image->url?>');"></div>
+									<div class="partner-name">
+										<p><?=$image->name?></p>
+									</div>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+				<a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous">
+					<img src="<?php bloginfo('template_directory') ?>/public/img/arrow-left.png" alt="Предыдущее фото">
+				</a>
+				<a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next">
+					<img src="<?php bloginfo('template_directory') ?>/public/img/arrow-right.png" alt="Следущее фото">
+				</a>
+			</div>
+		</div>
+	</div>
 
 
 	<!--НАЧАЛО оставить заявку-->
