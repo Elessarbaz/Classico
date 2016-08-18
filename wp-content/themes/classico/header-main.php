@@ -40,9 +40,11 @@
 			<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
 				<li><a href="#home" data-uk-smooth-scroll>Главная</a></li>
 				<li><a href="#services" data-uk-smooth-scroll="{offset: 60}">Наши услуги</a></li>
-				<li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
+                <li><a href="/gallery" >Галерея</a></li>
+                <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
 				<li><a href="#partners" data-uk-smooth-scroll="{offset: 60}">Партнёры</a></li>
 				<li><a href="#trainings" data-uk-smooth-scroll="{offset: 60}">Обучение</a></li>
+				<li><a href="#masters" data-uk-smooth-scroll="{offset: 60}">Мастера</a></li>
 				<li><a href="#feedback" data-uk-smooth-scroll="{offset: 60}">Связаться</a></li>
 				<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
 			</ul>
@@ -54,9 +56,11 @@
 				<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
 					<li><a href="#home" data-uk-smooth-scroll>Главная</a></li>
 					<li><a href="#services" data-uk-smooth-scroll="{offset: 60}">Наши услуги</a></li>
-					<li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
+                    <li><a href="/gallery" >Галерея</a></li>
+                    <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
 					<li><a href="#partners" data-uk-smooth-scroll="{offset: 60}">Партнёры</a></li>
 					<li><a href="#trainings" data-uk-smooth-scroll="{offset: 60}">Обучение</a></li>
+					<li><a href="#masters" data-uk-smooth-scroll="{offset: 60}">Мастера</a></li>
 					<li><a href="#feedback" data-uk-smooth-scroll="{offset: 60}">Связаться</a></li>
 					<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
 				</ul>

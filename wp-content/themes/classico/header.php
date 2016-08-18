@@ -39,9 +39,11 @@
 			<ul class="uk-navbar-nav uk-hidden-small" >
 				<li><a href="<?=get_permalink(4)?>#home" >Главная</a></li>
 				<li><a href="<?=get_permalink(4)?>#services" >Наши услуги</a></li>
-				<li><a href="<?=get_permalink(4)?>#about" >О центре</a></li>
+                <li><a href="/gallery" >Галерея</a></li>
+                <li><a href="<?=get_permalink(4)?>#about" >О центре</a></li>
 				<li><a href="<?=get_permalink(4)?>#partners" >Партнёры</a></li>
 				<li><a href="<?=get_permalink(4)?>#trainings" >Обучение</a></li>
+				<li><a href="<?=get_permalink(4)?>#masters">Мастера</a></li>
 				<li><a href="<?=get_permalink(4)?>#feedback" >Связаться</a></li>
 				<li><a href="<?=get_permalink(4)?>#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
 			</ul>
@@ -53,9 +55,11 @@
 				<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
 					<li><a href="<?=get_permalink(4)?>#home" >Главная</a></li>
 					<li><a href="<?=get_permalink(4)?>#services" >Наши услуги</a></li>
+                    <li><a href="/gallery" >Галерея</a></li>
 					<li><a href="<?=get_permalink(4)?>#about" >О центре</a></li>
 					<li><a href="<?=get_permalink(4)?>#partners" >Партнёры</a></li>
 					<li><a href="<?=get_permalink(4)?>#trainings" >Обучение</a></li>
+					<li><a href="<?=get_permalink(4)?>#masters">Мастера</a></li>
 					<li><a href="<?=get_permalink(4)?>#feedback" >Связаться</a></li>
 					<li><a href="<?=get_permalink(4)?>#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
 				</ul>
