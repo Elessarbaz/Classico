@@ -38,30 +38,36 @@ get_header(); ?>
 			<!--КОНЕЦ типовой заголовок-->
 			<div class="services">
 				<div class="uk-container uk-container-center">
-					<ul>
-						<li>
-							<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
-						</li>
-					<?php
-					foreach ($category as $value):?>
-						<li>
-						<a href="<?=get_term_link($value->term_id)?>"><?=$value->name?></a>
-						</li>
-					<?php endforeach;
-					?>
-					</ul>
-					<ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-						<?php
-						query_posts(array('category_name'=>$obj->slug, 'numberposts'=>-1));
-						if ( have_posts() ) : ?>
-							<?php
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/content', 'archive-single' );
-							endwhile;
-							the_posts_navigation();
-						endif; ?>
-					</ul>
+
+					<div class="uk-grid">
+						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-4">
+							<ul class="services-menu-nav">
+								<li>
+									<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
+								</li>
+								<?php
+								foreach ($category as $value):?>
+									<li>
+										<a href="<?=get_term_link($value->term_id)?>"><?=$value->name?></a>
+									</li>
+								<?php endforeach;
+								?>
+							</ul>
+						</div>
+						<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-3-4">
+							<ul class="uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
+								<?php
+								query_posts(array('category_name'=>$obj->slug, 'numberposts'=>-1));
+								if ( have_posts() ) : ?>
+									<?php
+									/* Start the Loop */
+									while ( have_posts() ) : the_post();
+										get_template_part( 'template-parts/content', 'archive-single' );
+									endwhile;
+								endif; ?>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main><!-- #main -->
