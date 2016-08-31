@@ -41,6 +41,8 @@
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/slideshow.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/lightbox.min.js"></script>
 <script src="<?php bloginfo('template_directory') ?>/public/js/components/parallax.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/unitegallery.min.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/public/js/ug-theme-tiles.js"></script>
 <script>
 	$("table").addClass('uk-table uk-table-striped uk-table-hover');
 </script>
@@ -53,6 +55,15 @@
 	var el = document.querySelector('input[type="tel"]');
 	console.log();
 	VMasker(el).maskPattern("+9(999) 999-99-99"); // masking the input
+</script>
+<script>
+	$(document).ready(function(){
+
+		$("#unitegallery-1").unitegallery({
+			tiles_type:"justified"
+		});
+	});
+
 </script>
 <?php wp_footer() ?>
 </body>

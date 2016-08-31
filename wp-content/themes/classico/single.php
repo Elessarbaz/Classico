@@ -6,7 +6,7 @@
  *
  * @package Classico
  */
-
+print_r(get_queried_object());
 get_header(); ?>
 
 	<div id="primary" class="content-area">

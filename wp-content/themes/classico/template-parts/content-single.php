@@ -11,7 +11,25 @@
 			<article>
 			<img src="<?=get_the_post_thumbnail_url()?>" class="float-right-img">
 			<?php the_content() ?>
+				<div class="uk-container uk-container-center">
+				<?php if ( $gallery=pp_gallery_get() ):?>
+					<h2>Галерея</h2>
+					<div class="uk-container uk-container-center">
+						<div id="unitegallery-1">
+							<?php foreach ($gallery as $image): ?>
+								<img alt="Image" src="<?=$image->url?>"
+									 data-image="<?=$image->url?>"
+									 data-description="Фото">
+							<?php endforeach; ?>
+
+
+						</div>
+					</div>
+				<?php endif; ?>
+				</div>
+
 			</article>
+
 		</div>
 	</div>
 		<div class="padding-background">
