@@ -299,6 +299,16 @@ footer {
         .services li .text-section a:hover {
           background: white;
           color: #9b4b58; }
+  .services .service-names li {
+    margin-bottom: 10px; }
+  .services .service-names a {
+    font-size: 18px;
+    padding: 6px;
+    background: white;
+    text-align: center; }
+    .services .service-names a:hover {
+      color: #9b4b58;
+      background: #ede1e1; }
 
 /* КОНЕЦ services */
 /* НАЧАЛО about */

@@ -379,6 +379,23 @@ footer {
       }
     }
   }
+
+  .service-names {
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      font-size: 18px;
+      padding: 6px;
+      background: white;
+      text-align: center;
+      &:hover {
+        color: $color-dark;
+        background: $color-neutral;
+      }
+    }
+  }
 }
 /* КОНЕЦ services */
 

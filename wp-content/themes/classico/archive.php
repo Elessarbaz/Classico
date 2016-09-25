@@ -44,7 +44,7 @@ get_header(); ?>
 			<!--КОНЕЦ типовой заголовок-->
 			<div class="services">
 				<div class="uk-container uk-container-center">
-					<ul>
+					<ul class="service-names uk-grid uk-grid-width-medium-1-2">
 						<li>
 							<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
 						</li>
