@@ -67,6 +67,11 @@ get_header(); ?>
 							endwhile;
 						endif; ?>
 					</ul>
+					<ul class="service-names uk-grid uk-grid-width-small-1-1 uk-visible-small">
+						<li>
+							<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="services">
