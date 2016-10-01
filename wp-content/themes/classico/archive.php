@@ -44,34 +44,37 @@ get_header(); ?>
 			<!--КОНЕЦ типовой заголовок-->
 			<div class="services">
 				<div class="uk-container uk-container-center">
-					<ul class="service-names uk-grid uk-grid-width-medium-1-2">
-						<li>
-							<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
-						</li>
-					<?php
-					foreach ($category as $value):?>
-						<li>
-						<a href="<?=get_term_link($value->term_id)?>"><?=$value->name?></a>
-						</li>
-					<?php endforeach;
-					?>
-					</ul>
-					<ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-						<?php
-						query_posts(array('category_name'=>$obj->slug, 'numberposts'=>-1));
-						if ( have_posts() ) : ?>
+					<div class="uk-grid">
+						<ul class="service-names uk-width-medium-1-4">
+							<li>
+								<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
+							</li>
 							<?php
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/content', 'archive-single' );
-							endwhile;
-						endif; ?>
-					</ul>
-					<ul class="service-names uk-grid uk-grid-width-small-1-1 uk-visible-small">
+							foreach ($category as $value):?>
+								<li>
+									<a href="<?=get_term_link($value->term_id)?>"><?=$value->name?></a>
+								</li>
+							<?php endforeach;
+							?>
+						</ul>
+						<ul class="uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-grid-width-small-1-1 uk-width-medium-3-4">
+							<?php
+							query_posts(array('category_name'=>$obj->slug, 'posts_per_page'=>$page_post,'offset'=>$offset));
+							if ( have_posts() ) : ?>
+								<?php
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
+									get_template_part( 'template-parts/content', 'archive-single' );
+								endwhile;
+							endif; ?>
+						</ul>
+					</div>
+
+				<!--	<ul class="service-names uk-grid uk-grid-width-small-1-1 uk-visible-small">
 						<li>
-							<a href="<?=get_term_link(2)?>"><?=get_category(2)->name?></a>
+							<a href="<?/*=get_term_link(2)*/?>"><?/*=get_category(2)->name*/?></a>
 						</li>
-					</ul>
+					</ul>-->
 				</div>
 			</div>
 			<div class="services">

@@ -53,7 +53,7 @@ h3 {
       margin-right: 20px;
     }
   }
-  a {
+  a{
     display: inline-block;
     color: white;
     background: $color-light;
@@ -62,6 +62,11 @@ h3 {
     &:hover {
       background: white;
       color: $color-dark;
+    }
+    @media screen and(max-width: 480px) {
+      padding: 10px 15px;
+      display: block;
+      border: 1px solid;
     }
   }
 }
@@ -230,7 +235,7 @@ footer {
     margin: 0 auto;
     display: inline-block;
     @media screen and (min-width: 1220px) {
-      max-width: none;
+      max-width: 160px;
     }
   }
   nav {
@@ -349,7 +354,7 @@ footer {
   li {
     display: flex;
     flex-flow: column;
-    margin-bottom: 35px;
+    margin-top: 20px;
     .img {
       height: 150px;
       background: 50% 50%/cover;
@@ -383,6 +388,7 @@ footer {
   .service-names {
     li {
       margin-bottom: 10px;
+      list-style: none;
     }
 
     a {
@@ -390,6 +396,7 @@ footer {
       padding: 6px;
       background: white;
       text-align: center;
+      display: block;
       &:hover {
         color: $color-dark;
         background: $color-neutral;
@@ -632,20 +639,49 @@ footer {
   height: 78px;
   background: #9b4b58;
   z-index: 99999999;
+  opacity: .5;
+  transition: all 400ms;
   a{
     font-size: 36px;
     color: white;
     margin-bottom: 3px;
   }
   &:hover{
-    background: white;
-    transition: all 400ms;
-    a{
-      color: #9b4b58;
-    }
+    opacity: 1;
   }
 }
 
+.slide-item{
+  @media screen and (max-width: 768px) {
+    min-height: 50vw;
+  }
+}
+
+.x-button{
+  display: inline-block;
+  color: white;
+  background: $color-light;
+  border-radius: 3px;
+  padding: 5px 15px;
+  &:hover {
+    background: white;
+    color: $color-dark;
+  }
+  @media screen and(max-width: 480px) {
+    padding: 10px 15px;
+    display: block;
+    border: 1px solid;
+  }
+}
+
+.x-dark {
+  background: #9b4b58;
+}
+
+.uk-pagination>.uk-active>a {
+  background: #9b4b58;
+  color: #eee;
+}
 /* --------------------------------
 --КОНЕЦ стр. single-service.html--
 ----------------------------------*/

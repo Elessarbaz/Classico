@@ -13,13 +13,21 @@
 			</article>
 			<div class="uk-grid">
 				<?php $gallery = pp_gallery_get()?>
-				<?php foreach ($gallery as $image){?>
-					<div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-3">
-						<a href="<?php echo $image->url?>" data-uk-lightbox="{group:'album'}">
-							<div class="image-gallery" style="background-image: url(<?php echo $image->url?>)"></div>
-						</a>
+				<div class="uk-width-1-1" id="preloader">
+
+				</div>
+				<div class="uk-width-1-1">
+					<div id="unitegallery-1">
+						<?php foreach ($gallery as $image): ?>
+							<img alt="<?=$image->alt?>" src="<?=$image->url?>"
+								 data-image="<?=$image->url?>"
+								 data-description="Фото">
+						<?php endforeach; ?>
 					</div>
-				<?php }?>
+				</div>
+				<script>
+
+				</script>
 			</div>
 		</div>
 	</div>

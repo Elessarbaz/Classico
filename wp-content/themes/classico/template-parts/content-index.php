@@ -5,7 +5,7 @@
 				foreach ($gallery as $image){
 			?>
 			<li>
-				<div class="main-section uk-flex uk-flex-center uk-flex-column" style="background-image: url(<?php echo $image->url?>)">
+				<div class="main-section uk-flex uk-flex-center uk-flex-column slide-item" style="background-image: url(<?php echo $image->url?>)">
 					<?php echo $image->description?>
 				</div>
 			</li>
@@ -24,13 +24,14 @@
 		<div class="uk-container uk-container-center">
 			<h2>Услуги центра косметологии Classico</h2>
 			<a href="/category/services/">Все услуги</a>
+			<a href="<?=get_permalink(241)?>">Прайс лист</a>
 		</div>
 	</div>
 	<!--КОНЕЦ типовой заголовок-->
 	<div class="services">
 		<div class="uk-container uk-container-center">
 			<ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-				<?php $posts=get_posts(array('category_name'=>'services','orderby'=>'ASC', 'numberposts'=>8));
+				<?php $posts=get_posts(array('category_name'=>'services_at_home','orderby'=>'ASC'));
 				foreach ($posts as $post): setup_postdata($post);
 				?>
 				<li>
@@ -46,6 +47,7 @@
 				</li>
 				<?php endforeach; wp_reset_query(); ?>
 			</ul>
+			<div class="uk-text-center uk-visible-small"><a class="x-button x-dark" href="/category/services/">Все услуги</a></div>
 		</div>
 	</div>
 	<!--КОНЕЦ Услуги-->
@@ -96,10 +98,10 @@
 						foreach ($gallery as $image):
 						?>
 						<li>
-							<a href="<?=$image->description?>">
+							<a href="#" onclick="window.open('<?=$image->alt?>', '_blank')">
 								<div class="img" style="background-image: url('<?=$image->url?>');"></div>
 								<div class="partner-name">
-									<p><?=$image->alt?></p>
+									<p><?=$image->description?></p>
 								</div>
 							</a>
 						</li>
@@ -161,7 +163,7 @@
 								<a href="#">
 									<div class="img" style="background-image: url('<?=$image->url?>');"></div>
 									<div class="partner-name">
-										<p><?=$image->name?></p>
+										<p><?=$image->description?></p>
 									</div>
 								</a>
 							</li>

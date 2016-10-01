@@ -50,6 +50,11 @@ h3 {
     .heading a:hover {
       background: white;
       color: #9b4b58; }
+    @media screen and (max-width: 480px) {
+      .heading a {
+        padding: 10px 15px;
+        display: block;
+        border: 1px solid; } }
 
 a {
   color: inherit;
@@ -185,7 +190,7 @@ footer {
     display: inline-block; }
     @media screen and (min-width: 1220px) {
       .nav-and-logo .logo {
-        max-width: none; } }
+        max-width: 160px; } }
   .nav-and-logo nav {
     float: right;
     background: transparent;
@@ -275,7 +280,7 @@ footer {
   .services li {
     display: flex;
     flex-flow: column;
-    margin-bottom: 35px; }
+    margin-top: 20px; }
     .services li .img {
       height: 150px;
       background: 50% 50%/cover; }
@@ -300,12 +305,14 @@ footer {
           background: white;
           color: #9b4b58; }
   .services .service-names li {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    list-style: none; }
   .services .service-names a {
     font-size: 18px;
     padding: 6px;
     background: white;
-    text-align: center; }
+    text-align: center;
+    display: block; }
     .services .service-names a:hover {
       color: #9b4b58;
       background: #ede1e1; }
@@ -489,16 +496,41 @@ footer {
   width: 78px;
   height: 78px;
   background: #9b4b58;
-  z-index: 99999999; }
+  z-index: 99999999;
+  opacity: .5;
+  transition: all 400ms; }
   .link-up a {
     font-size: 36px;
     color: white;
     margin-bottom: 3px; }
   .link-up:hover {
+    opacity: 1; }
+
+@media screen and (max-width: 768px) {
+  .slide-item {
+    min-height: 50vw; } }
+
+.x-button {
+  display: inline-block;
+  color: white;
+  background: #c6a298;
+  border-radius: 3px;
+  padding: 5px 15px; }
+  .x-button:hover {
     background: white;
-    transition: all 400ms; }
-    .link-up:hover a {
-      color: #9b4b58; }
+    color: #9b4b58; }
+  @media screen and (max-width: 480px) {
+    .x-button {
+      padding: 10px 15px;
+      display: block;
+      border: 1px solid; } }
+
+.x-dark {
+  background: #9b4b58; }
+
+.uk-pagination > .uk-active > a {
+  background: #9b4b58;
+  color: #eee; }
 
 /* --------------------------------
 --КОНЕЦ стр. single-service.html--
