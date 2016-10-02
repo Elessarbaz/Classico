@@ -23,10 +23,10 @@
             </span>
 
 		<span class="social-icons">
-                <a target="_blank" href="<?=get_field('instagram')?>"><i class="uk-icon-instagram"></i></a>
-				<a target="_blank" href="<?=get_field('facebook')?>"><i class="uk-icon-facebook"></i></a>
-				<a target="_blank" href="<?=get_field('vk')?>"><i class="uk-icon-vk"></i></a>
-				<a target="_blank" href="<?=get_field('twitter')?>"><i class="uk-icon-twitter"></i></a>
+                <a target="_blank" href="<?=get_field('instagram', 4)?>"><i class="uk-icon-instagram"></i></a>
+				<a target="_blank" href="<?=get_field('facebook', 4)?>"><i class="uk-icon-facebook"></i></a>
+				<a target="_blank" href="<?=get_field('vk', 4)?>"><i class="uk-icon-vk"></i></a>
+			<!--<a target="_blank" href="<?/*=get_field('twitter', 4)*/?>"><i class="uk-icon-twitter"></i></a>-->
             </span>
 	</p>
 </header>
