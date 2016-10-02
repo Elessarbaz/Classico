@@ -160,7 +160,7 @@
 						foreach ($gallery as $image):
 							?>
 							<li>
-								<a href="#">
+								<a href="">
 									<div class="img" style="background-image: url('<?=$image->url?>');"></div>
 									<div class="partner-name">
 										<p><?=$image->description?></p>

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slider.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/components/slidenav.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/styles.css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/sunite-gallery.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/public/css/unite-gallery.css">
 </head>
 <body>
 <!--НАЧАЛО header-->

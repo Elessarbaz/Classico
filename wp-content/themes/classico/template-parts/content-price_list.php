@@ -9,7 +9,6 @@
 	<div class="uk-container uk-container-center">
 		<div class="content">
 			<article>
-			<img src="<?=get_the_post_thumbnail_url()?>" class="float-right-img">
 			<?php the_content() ?>
 			</article>
 		</div>
