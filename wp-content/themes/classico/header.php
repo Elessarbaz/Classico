@@ -31,22 +31,17 @@
 	</p>
 </header>
 <!--КОНЕЦ header-->
-
+<?php $menu = wp_get_nav_menu_items('top_menu') ?>
+<?php /*var_dump($menu) */?>
 <!--НАЧАЛО nav-and-logo-->
 <div class="nav-and-logo">
 	<div class="uk-container uk-container-center uk-flex uk-flex-bottom uk-flex-space-between">
 		<a href="/"><img src="<?=get_field('logo',4)?>" alt="Клссико - центр эстетики" class="logo"></a>
 		<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'body', top:-200, animation: 'uk-animation-slide-top'}">
-			<ul class="uk-navbar-nav uk-hidden-small" >
-				<li><a href="<?=get_permalink(4)?>#home" >Главная</a></li>
-				<li><a href="<?=get_permalink(4)?>#services" >Наши услуги</a></li>
-                <li><a href="/gallery" >Галерея</a></li>
-                <li><a href="<?=get_permalink(4)?>#about" >О центре</a></li>
-				<li><a href="<?=get_permalink(4)?>#partners" >Партнёры</a></li>
-				<li><a href="<?=get_permalink(4)?>#trainings" >Обучение</a></li>
-				<li><a href="<?=get_permalink(4)?>#masters">Мастера</a></li>
-				<li><a href="<?=get_permalink(4)?>#feedback" >Связаться</a></li>
-				<li><a href="<?=get_permalink(4)?>#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+			<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
+				<?php foreach ($menu as $key => $item) {?>
+						<li><a href="<?=$item->url ?>" ><?=$item->title?></a></li>
+				<?php } ?>
 			</ul>
 			<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 		</nav>
@@ -54,15 +49,9 @@
 		<div id="my-id" class="uk-offcanvas">
 			<div class="uk-offcanvas-bar">
 				<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-					<li><a href="<?=get_permalink(4)?>#home" >Главная</a></li>
-					<li><a href="<?=get_permalink(4)?>#services" >Наши услуги</a></li>
-                    <li><a href="/gallery" >Галерея</a></li>
-					<li><a href="<?=get_permalink(4)?>#about" >О центре</a></li>
-					<li><a href="<?=get_permalink(4)?>#partners" >Партнёры</a></li>
-					<li><a href="<?=get_permalink(4)?>#trainings" >Обучение</a></li>
-					<li><a href="<?=get_permalink(4)?>#masters">Мастера</a></li>
-					<li><a href="<?=get_permalink(4)?>#feedback" >Связаться</a></li>
-					<li><a href="<?=get_permalink(4)?>#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+					<?php foreach ($menu as $key => $item) {?>
+						<li><a href="<?=$item->url ?>"><?=$item->title?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

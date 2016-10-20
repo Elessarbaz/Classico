@@ -19,7 +19,7 @@
 				<div class="uk-width-1-1">
 					<div id="unitegallery-1">
 						<?php foreach ($gallery as $image): ?>
-							<img alt="<?=$image->alt?>" src="<?=$image->url?>"
+							<img class="uk-hidden" alt="<?=$image->alt?>" src="<?=$image->url?>"
 								 data-image="<?=$image->url?>"
 								 data-description="Фото">
 						<?php endforeach; ?>

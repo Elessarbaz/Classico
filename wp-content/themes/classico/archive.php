@@ -30,7 +30,7 @@ get_header(); ?>
 				'parent'       => 2,
 				'orderby'      => 'name',
 				'order'        => 'ASC',
-				'hide_empty'   => 1,
+				'hide_empty'   => 0,
 				'hierarchical' => 1,
 				'exclude'      => '',
 				'include'      => '',

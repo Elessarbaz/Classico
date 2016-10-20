@@ -31,22 +31,23 @@
 	</p>
 </header>
 <!--КОНЕЦ header-->
-
+<?php $menu = wp_get_nav_menu_items('top_menu') ?>
+<?php /*var_dump($menu) */?>
 <!--НАЧАЛО nav-and-logo-->
-<div class="nav-and-logo">
+<div  class="nav-and-logo">
 	<div class="uk-container uk-container-center uk-flex uk-flex-bottom uk-flex-space-between">
 		<a href="/"><img src="<?=get_field('logo',4)?>" alt="Лого" class="logo"></a>
 		<nav class="uk-navbar" data-uk-sticky="{getWidthFrom:'body', top:-200, animation: 'uk-animation-slide-top'}">
-			<ul class="uk-navbar-nav uk-hidden-small" data-uk-scrollspy-nav="{closest:'li', topoffset:-200}">
-				<li><a href="#home" data-uk-smooth-scroll>Главная</a></li>
-				<li><a href="#services" data-uk-smooth-scroll="{offset: 60}">Наши услуги</a></li>
-                <li><a href="/gallery" >Галерея</a></li>
-                <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
-				<li><a href="#partners" data-uk-smooth-scroll="{offset: 60}">Партнёры</a></li>
-				<li><a href="#trainings" data-uk-smooth-scroll="{offset: 60}">Обучение</a></li>
-				<li><a href="#masters" data-uk-smooth-scroll="{offset: 60}">Мастера</a></li>
-				<li><a href="#feedback" data-uk-smooth-scroll="{offset: 60}">Связаться</a></li>
-				<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+			<ul class="uk-navbar-nav uk-hidden-small" >
+				<li><a href="#home" <?=$menu[0]->attr_title ?>><?=$menu[0]->title?></a></li>
+				<?php
+				foreach ($menu as $key => $item) {
+					if($key > 0){;?>
+					<li><a href="<?=$item->url ?>" <?=$item->attr_title ?>><?=$item->title?></a></li>
+				<?php
+					}
+				}
+				?>
 			</ul>
 			<a href="#my-id" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
 		</nav>
@@ -54,15 +55,9 @@
 		<div id="my-id" class="uk-offcanvas">
 			<div class="uk-offcanvas-bar">
 				<ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-					<li><a href="#home" data-uk-smooth-scroll>Главная</a></li>
-					<li><a href="#services" data-uk-smooth-scroll="{offset: 60}">Наши услуги</a></li>
-                    <li><a href="/gallery" >Галерея</a></li>
-                    <li><a href="#about" data-uk-smooth-scroll="{offset: 60}">О центре</a></li>
-					<li><a href="#partners" data-uk-smooth-scroll="{offset: 60}">Партнёры</a></li>
-					<li><a href="#trainings" data-uk-smooth-scroll="{offset: 60}">Обучение</a></li>
-					<li><a href="#masters" data-uk-smooth-scroll="{offset: 60}">Мастера</a></li>
-					<li><a href="#feedback" data-uk-smooth-scroll="{offset: 60}">Связаться</a></li>
-					<li><a href="#footer" data-uk-smooth-scroll="{offset: 40}">Контакты</a></li>
+					<?php foreach ($menu as $key => $item) {?>
+						<li><a href="<?=$item->url ?>" <?=$item->attr_title ?>><?=$item->title?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 		</div>

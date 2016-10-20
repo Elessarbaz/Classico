@@ -42,19 +42,23 @@ h3 {
       .heading h2 {
         margin-right: 20px; } }
   .heading a {
-    display: inline-block;
+    padding: 10px 15px;
+    display: block;
+    border: 1px solid;
     color: white;
     background: #c6a298;
     border-radius: 3px;
-    padding: 5px 15px; }
+    margin-top: 10px; }
+    .heading a:first-child {
+      margin-top: 0; }
     .heading a:hover {
       background: white;
       color: #9b4b58; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 480px) {
       .heading a {
-        padding: 10px 15px;
-        display: block;
-        border: 1px solid; } }
+        display: inline-block;
+        padding: 5px 15px;
+        border: 0 none; } }
 
 a {
   color: inherit;
@@ -511,19 +515,21 @@ footer {
     min-height: 50vw; } }
 
 .x-button {
-  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  display: block;
+  border: 1px solid;
   color: white;
   background: #c6a298;
-  border-radius: 3px;
-  padding: 5px 15px; }
+  border-radius: 3px; }
   .x-button:hover {
     background: white;
     color: #9b4b58; }
-  @media screen and (max-width: 480px) {
+  @media screen and (min-width: 480px) {
     .x-button {
-      padding: 10px 15px;
-      display: block;
-      border: 1px solid; } }
+      margin-top: auto;
+      display: inline-block;
+      padding: 5px 15px; } }
 
 .x-dark {
   background: #9b4b58; }

@@ -1,5 +1,5 @@
 	<!--НАЧАЛО main-section-->
-	<div class="uk-slidenav-position" data-uk-slideshow="{kenburns:true, autoplay: true}">
+	<div  class="uk-slidenav-position" data-uk-slideshow="{kenburns:true, autoplay: true}">
 		<ul class="uk-slideshow">
 			<?php $gallery = pp_gallery_get();
 				foreach ($gallery as $image){
@@ -28,23 +28,40 @@
 		</div>
 	</div>
 	<!--КОНЕЦ типовой заголовок-->
+	<?php
+	$args = array(
+		'child_of'     => '',
+		'parent'       => 2,
+		'orderby'      => 'name',
+		'order'        => 'ASC',
+		'hide_empty'   => 1,
+		'hierarchical' => 1,
+		'exclude'      => '',
+		'include'      => '',
+		'number'       => 0,
+		'taxonomy'     => 'category',
+		'pad_counts'   => false,
+		// полный список параметров смотрите в описании функции http://wp-kama.ru/function/get_terms
+	);
+	$category=get_categories($args);
+	?>
 	<div class="services">
 		<div class="uk-container uk-container-center">
 			<ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-width-small-1-1">
-				<?php $posts=get_posts(array('category_name'=>'services_at_home','orderby'=>'ASC'));
-				foreach ($posts as $post): setup_postdata($post);
-				?>
+				<?php foreach ($category as $value):?>
+					<?php if(get_field('category_image', $value)['url']): ?>
 				<li>
-					<div class="img" style="background-image: url('<?=get_the_post_thumbnail_url()?>')">
+					<div class="img" style="background-image: url('<?=get_field('category_image', $value)['url']?>')">
 					</div>
 					<div class="text-section">
-						<h3><?=get_the_title()?></h3>
+						<h3><?=$value->name?></h3>
 						<p>
-							<?php the_content('') ?>
+							<?=$value->description?>
 						</p>
-						<a href="<?=get_permalink()?>">Подробнее</a>
+						<a href="<?=get_term_link($value->term_id)?>">Подробнее</a>
 					</div>
 				</li>
+				<?php endif;?>
 				<?php endforeach; wp_reset_query(); ?>
 			</ul>
 			<div class="uk-text-center uk-visible-small"><a class="x-button x-dark" href="/category/services/">Все услуги</a></div>
@@ -123,27 +140,27 @@
 	<!--НАЧАЛО Обучение-->
 	<!--НАЧАЛО типовой заголовок-->
 	<?php $post=get_post(31); setup_postdata($post); ?>
-	<div class="heading" id="trainings">
+<!--	<div class="heading" id="trainings">
 		<div class="uk-container uk-container-center">
-			<h2><?=get_the_title()?></h2>
-			<a href="<?=get_permalink()?>">Подробнее</a>
+			<h2><?/*=get_the_title()*/?></h2>
+			<a href="<?/*=get_permalink()*/?>">Подробнее</a>
 		</div>
-	</div>
+	</div>-->
 	<!--КОНЕЦ типовой заголовок-->
-	<div class="trainings">
+<!--	<div class="trainings">
 		<div class="uk-container uk-container-center">
 			<div class="uk-grid">
 				<div class="uk-width-medium-1-2">
-					<img src="<?=get_the_post_thumbnail_url()?>">
+					<img src="<?/*=get_the_post_thumbnail_url()*/?>">
 				</div>
 				<div class="uk-width-medium-1-2">
 					<article>
-					<?php the_content(''); ?>
+					<?php /*the_content(''); */?>
 					</article>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<!--КОНЕЦ Обучение-->
 	<div class="heading" id="masters">
 		<div class="uk-container uk-container-center">
